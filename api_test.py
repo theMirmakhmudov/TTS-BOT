@@ -1,9 +1,16 @@
 import requests
 
+data = {
+    "en_female": "en-US-JennyNeural",
+    "en_male": "en-US-AdolfoNeural",
+    "uz_female": "uz-UZ-MadinaNeural",
+    "uz_male": "uz-UZ-SardorNeural",
+}
+
 
 def tts_change(mod, text):
     json_data = {
-        "userId": "public-access",
+        "userId": "inUAm03YN6bzaW49f2ztet2P91V2",
         "platform": "landing_demo",
         "ssml": f"<speak><p>{text}</p></speak>",
         "voice": f"{mod}",
@@ -34,5 +41,5 @@ def tts_change(mod, text):
         print("So'rov yuborishda xato yuz berdi:", e)
         return None
 
-result = tts_change(mod="uz-UZ-SardorNeural", text="Salom, Nemat dalbayop")
+result = tts_change(mod=data["en_female"], text="Assalomu Aleykum. Xurmatli ota onalar sizlar bilan Mr.Mirmakhmudov")
 print("\nAPI javobi:", result)
